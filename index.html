@@ -1,66 +1,128 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const cards = document.querySelectorAll('.card');
-  const modal = document.getElementById('cardModal');
-  const modalDetails = document.getElementById('modalDetails');
-  const closeBtn = document.querySelector('.close-btn');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abhirajan R - Futuristic Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/...."></script>
+  
+</head>
+<body>
 
-  // ✅ On Card Click → Open Modal with Only Back Content
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const backSide = card.querySelector('.back');
-      modalDetails.innerHTML = backSide ? backSide.innerHTML : '<p>No additional info available.</p>';
-      modal.style.display = 'block';
-    });
-  });
+  <!-- Moon Dark Mode Toggle -->
+  <button id="themeToggle" class="toggle-btn">
+    <i class="fas fa-moon"></i>
+  </button>
 
-  // ✅ Close Modal
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
+  <!-- Typing Animation Title -->
+  <h2 id="typing"></h2>
 
-  // ✅ Close when clicking outside modal content
-  window.addEventListener('click', function(event) {
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  });
+  <!-- Live Clock -->
+  <div id="clock"></div>
 
-  // ✅ Typing Animation
-  const text = "ABHIRAJAN R - TECHNOLOGIST";
-  let index = 0;
-  function type() {
-    document.getElementById('typing').textContent = text.slice(0, index++);
-    if (index <= text.length) setTimeout(type, 120);
-  }
-  type();
+  <!-- Scroll To Top Button -->
+  <button id="scrollToTop">&#8679;</button>
 
-  // ✅ Dark Mode Toggle
-  document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
+  <!-- Cards Container -->
+  <div class="container">
 
-  // ✅ Scroll Reveal
-  ScrollReveal().reveal('.card', {
-    interval: 150,
-    distance: '60px',
-    origin: 'bottom',
-    reset: false
-  });
+    <!-- Profile Card -->
+    <div class="card">
+      <div class="front">
+        <img src="image/images.jpg" alt="Profile" />
+        <h2>ABHIRAJAN R</h2>
+        <h4><i class="fas fa-microchip"></i> Technologist</h4>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-user"></i> Profile</h3>
+        <p>I’m an open and honest person who values integrity and fairness in everything I do.</p>
+        <p><strong><i class="fas fa-language"></i> Languages:</strong> Tamil, English, Hindi</p>
+        <p><strong><i class="fas fa-phone"></i> Contact:</strong> +91 8778502453</p>
+        <p><strong><i class="fas fa-envelope"></i> Email:</strong> abhirajan2006@hotmail.com</p>
+      </div>
+    </div>
 
-  // ✅ Scroll To Top Button
-  const scrollBtn = document.getElementById('scrollToTop');
-  window.addEventListener('scroll', function() {
-    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  scrollBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    <!-- Education Card -->
+    <div class="card">
+      <div class="front">
+        <h2><i class="fas fa-graduation-cap"></i></h2>
+        <h3>EDUCATION</h3>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-school"></i> Academic Journey</h3>
+        <p><strong>B.Tech ECE (2024-2028)</strong><br>SASTRA SRC, Kumbakonam</p>
+        <p><strong>HSC (2022-2024)</strong><br>DR.G S Kalayanasundharam Hr Sec School</p>
+        <p><strong>SSC (2018-2022)</strong><br>Rice City Matric Hr Sec School</p>
+        <p><strong>Primary (2010-2017)</strong><br>Parimalam Matriculation, Hosur</p>
+      </div>
+    </div>
 
-  // ✅ Live Clock
-  function updateClock() {
-    const now = new Date();
-    document.getElementById('clock').textContent = now.toLocaleString();
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-});
+    <!-- Projects Card -->
+    <div class="card">
+      <div class="front">
+        <h2><i class="fas fa-robot"></i></h2>
+        <h3>PROJECTS</h3>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-tools"></i> Working Projects</h3>
+        <p><strong>SENTINEL-X (2024-25)</strong><br>IoT-based autonomous rescue robot</p>
+        <p><strong>SMART DRAINAGE SYSTEM (2024-25)</strong><br>AI + IoT for smart city water systems</p>
+      </div>
+    </div>
+
+    <!-- Skills Card -->
+    <div class="card">
+      <div class="front">
+        <h2><i class="fas fa-brain"></i></h2>
+        <h3>SKILLS</h3>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-cogs"></i> Expertise</h3>
+        <p>✔ Communication Skills<br>✔ Negotiation<br>✔ Management</p>
+      </div>
+    </div>
+
+    <!-- Certificates Card -->
+    <div class="card">
+      <div class="front">
+        <h2><i class="fas fa-certificate"></i></h2>
+        <h3>CERTIFICATES</h3>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-award"></i> Achievements</h3>
+        <p>✔ Programming Techniques – Bharathidasan Univ<br>✔ Prathamic, Madhyama – Hindi Prachar Sabha<br>✔ Google Digital Marketing<br>✔ AI in Neural Network, Arduino & Robotics</p>
+      </div>
+    </div>
+
+    <!-- Links Card -->
+    <div class="card">
+      <div class="front">
+        <h2><i class="fas fa-link"></i></h2>
+        <h3>LINKS</h3>
+      </div>
+      <div class="back">
+        <h3><i class="fas fa-globe"></i> References</h3>
+        <p><a href="https://drive.google.com/drive/folders/loM2x-DwUjRmjkK20dmMz6yQ5_9iukNUA" target="_blank">📁 Project Drive Link</a></p>
+        <p><strong>LinkedIn:</strong> ABHIRAJAN R</p>
+        <p><strong>Course:</strong> Pursuing Cisco Ethical Hacking (Intermediate)</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal Popup -->
+  <div id="cardModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <!-- ScrollReveal JS -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="scripts.js"></script>
+
+</body>
+</html>
