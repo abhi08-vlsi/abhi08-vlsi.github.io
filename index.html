@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abhirajan R - 3D Bio</title>
+  <title>Abhirajan R - Futuristic Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <!-- Moon Dark Mode Toggle -->
+  <button id="themeToggle" class="toggle-btn">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Typing Animation Title -->
+  <h2 id="typing"></h2>
+
+  <!-- Live Clock -->
+  <div id="clock"></div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollToTop">&#8679;</button>
+
+  <!-- Cards Container -->
   <div class="container">
 
-    <!-- PROFILE CARD -->
-    <div class="card" id="bioCard">
+    <!-- Profile Card -->
+    <div class="card">
       <div class="front">
         <img src="image/images.jpg" alt="Profile" />
         <h2>ABHIRAJAN R</h2>
@@ -26,7 +42,7 @@
       </div>
     </div>
 
-    <!-- EDUCATION CARD -->
+    <!-- Education Card -->
     <div class="card">
       <div class="front">
         <h2><i class="fas fa-graduation-cap"></i></h2>
@@ -41,7 +57,7 @@
       </div>
     </div>
 
-    <!-- PROJECTS CARD -->
+    <!-- Projects Card -->
     <div class="card">
       <div class="front">
         <h2><i class="fas fa-robot"></i></h2>
@@ -54,7 +70,7 @@
       </div>
     </div>
 
-    <!-- SKILLS CARD -->
+    <!-- Skills Card -->
     <div class="card">
       <div class="front">
         <h2><i class="fas fa-brain"></i></h2>
@@ -66,7 +82,7 @@
       </div>
     </div>
 
-    <!-- CERTIFICATE CARD -->
+    <!-- Certificates Card -->
     <div class="card">
       <div class="front">
         <h2><i class="fas fa-certificate"></i></h2>
@@ -78,7 +94,7 @@
       </div>
     </div>
 
-    <!-- LINKS CARD -->
+    <!-- Links Card -->
     <div class="card">
       <div class="front">
         <h2><i class="fas fa-link"></i></h2>
@@ -93,6 +109,18 @@
     </div>
 
   </div>
+
+  <!-- Modal Popup -->
+  <div id="cardModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <!-- ScrollReveal JS -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
